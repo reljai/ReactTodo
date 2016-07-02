@@ -12,10 +12,6 @@ var unsubscribe = store.subscribe(() => {
     console.log('New state', store.getState());
 });
 
-store.dispatch(actions.addTodo('sleep a little'));
-store.dispatch(actions.setSearchText('little'));
-store.dispatch(actions.toggleShowCompleted());
-
 // load Foundation
 $(document).foundation();
 
