@@ -29,6 +29,7 @@ module.exports = {
             './app/actions',
         ],
         alias: {
+            app: 'app',
             ApplicationStyles: 'app/styles/app.scss',
             reducers: 'app/reducers/reducers.jsx',
             configureStore: 'app/store/configureStore.jsx',
