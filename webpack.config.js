@@ -19,9 +19,9 @@ module.exports = {
         }),
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
-                warnings: false,
-            },
-        }),
+                warnings: false
+            }
+        })
     ],
     output: {
         path: __dirname,
@@ -33,13 +33,13 @@ module.exports = {
             'node_modules',
             './app/components',
             './app/api',
-            './app/actions',
+            './app/actions'
         ],
         alias: {
             app: 'app',
             ApplicationStyles: 'app/styles/app.scss',
             reducers: 'app/reducers/reducers.jsx',
-            configureStore: 'app/store/configureStore.jsx',
+            configureStore: 'app/store/configureStore.jsx'
         },
         extensions: ['', '.js', '.jsx']
     },
