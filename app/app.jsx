@@ -9,14 +9,16 @@ var actions = require('actions');
 var store = require('configureStore').configure();
 var TodoApi = require('TodoApi');
 
-var unsubscribe = store.subscribe(() => {
-    var state = store.getState();
-    console.log('New state', store.getState());
-    TodoApi.setTodos(state.todos);
-});
+// var unsubscribe = store.subscribe(() => {
+//     var state = store.getState();
+//     console.log('New state', store.getState());
+//     TodoApi.setTodos(state.todos);
+// });
 
-var initialTodos = TodoApi.getTodos();
-store.dispatch(actions.addTodos(initialTodos));
+// var initialTodos = TodoApi.getTodos();
+// store.dispatch(actions.addTodos(initialTodos));
+
+store.dispatch(actions.startAddTodos());
 
 // load Foundation
 $(document).foundation();

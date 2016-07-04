@@ -1,25 +1,25 @@
 var $ = require('jQuery');
 
 module.exports = {
-    setTodos: function(todos) {
-        if ($.isArray(todos)) {
-            localStorage.setItem('todos', JSON.stringify(todos));
-            return todos;
-        }
-    },
+    // setTodos: function(todos) {
+    //     if ($.isArray(todos)) {
+    //         localStorage.setItem('todos', JSON.stringify(todos));
+    //         return todos;
+    //     }
+    // },
     
-    getTodos: function() {
-        var todos = [];
-        var strTodos = localStorage.getItem('todos');
+    // getTodos: function() {
+    //     var todos = [];
+    //     var strTodos = localStorage.getItem('todos');
         
-        try {
-            todos = JSON.parse(strTodos);
-        } catch(e) {
+    //     try {
+    //         todos = JSON.parse(strTodos);
+    //     } catch(e) {
             
-        }
+    //     }
         
-        return ($.isArray(todos) ? todos : []);
-    },
+    //     return ($.isArray(todos) ? todos : []);
+    // },
     
     filterTodos: function(todos, searchText, showCompleted) {
         var filtered = [];
