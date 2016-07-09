@@ -92,4 +92,33 @@ describe('reducers', () => {
             expect(res[0].completedAt).toExist();
         });
     });
+    
+    describe('authReducer tests', () => {
+        it('should add user id', () => {
+           const action = {
+               type: 'LOGIN',
+               uid: 'dummy_user_id',
+           };
+           
+           const auth = {
+               uid: action.uid,
+           };
+           
+           var res = reducers.authReducer(df({}), df(action));
+           expect(res).toEqual(auth);
+        });
+        
+        it('should remove user id', () => {
+           const action = {
+               type: 'LOGOUT',
+           };
+           
+           const auth = {
+               uid: 'dummy_user_id',
+           };  
+           
+           var res = reducers.authReducer(df(auth), df(action));
+           expect(res).toEqual({});
+        });
+    });
 });

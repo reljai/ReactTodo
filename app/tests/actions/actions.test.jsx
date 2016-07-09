@@ -143,4 +143,25 @@ describe('actions', () => {
             }, done);
         });
     });
+    
+    describe('auth tests', () => {
+        it('should generate LOGIN action object', () => {
+            const action = {
+                type: 'LOGIN',
+                uid: 'dummy_user_id',
+            };
+            
+            var res = actions.login(action.uid);
+            expect(res).toEqual(action);
+        });
+        
+        it('should generate LOGOUT action object', () => {
+            const action = {
+                type: 'LOGOUT',
+            };
+            
+            var res = actions.logout();
+            expect(res).toEqual(action);
+        });
+    });
 });
