@@ -11,6 +11,7 @@ import router from 'app/router/';
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         hashHistory.push('/todos');
+        store.dispatch(actions.startAddTodos());
     } else {
         hashHistory.push('/');
     }
@@ -24,8 +25,6 @@ firebase.auth().onAuthStateChanged((user) => {
 
 // var initialTodos = TodoApi.getTodos();
 // store.dispatch(actions.addTodos(initialTodos));
-
-store.dispatch(actions.startAddTodos());
 
 // load Foundation
 $(document).foundation();
