@@ -91,6 +91,19 @@ describe('reducers', () => {
             expect(res[0].completed).toEqual(updates.completed);
             expect(res[0].completedAt).toExist();
         });
+        
+        it('should clear todos on LOGOUT', () => {
+            const todos = [{
+                id: 7,
+                text: "foo",
+                completed: false,
+                createdAt: undefined,
+                completedAt: undefined,               
+            }];
+            
+            var res = reducers.todosReducer(df(todos), df({type: 'LOGOUT'}));
+            expect(res.length).toEqual(0);
+        });
     });
     
     describe('authReducer tests', () => {
